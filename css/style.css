@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url("../imgs/paisley.jpg");
+}
+
+.upgradeFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    border-right: 5px solid black;
+}
+.iconFlex {
+    display: flex;
+}
+.upgradeItem {
+    padding: 20px;
+    background-color: #eb5252;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.clickFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    padding: 10%;
+}
+
+.clicker {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.achievmentFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    border-left: 5px solid black;
+}
