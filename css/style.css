@@ -1,24 +1,59 @@
 body {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
+    max-height: 100vh;
     margin: 0;
-    background-image: url("../imgs/paisley.jpg");
+    background-color: #0c0f9b;
+    background-image: url("../imgs/ball.svg");
+    background-repeat: round;
+    background-size: 5%;
+    background-blend-mode: darken;
 }
 
+.background {
+    width: 100%;
+    height: auto;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 3em;
+    text-align: center;
+}
+
+p {
+    color: #ffffff;
+    font-size: 1em;
+    text-align: center;
+}
+
+canvas { 
+    position: absolute;
+    pointer-events:none;
+    z-index: 100;
+    width: 100%;
+    max-height: 100vh;
+}
+
+#ballAnimate {
+}
 .upgradeFlex {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
     flex-grow: 1;
     border-right: 5px solid black;
+    max-height: 100vh;
 }
-.iconFlex {
+
+.clickUpgradeFlex {
     display: flex;
 }
+
 .upgradeItem {
     padding: 20px;
-    background-color: #eb5252;
+    background-color: #ff0000;
     border: 1px solid #000000;
     border-radius: 5px;
     cursor: pointer;
@@ -28,25 +63,36 @@ body {
 .clickFlex {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: top;
     align-items: center;
-    flex-grow: 1;
-    padding: 10%;
+    flex-grow: 2;
+    padding: 2%;
+    max-height: 100vh;
 }
 
-.clicker {
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.clicker img{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    padding: 0px;
     cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.clicker img:hover {
+    transform: scale(1.2);
 }
 
 .achievmentFlex {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
     flex-grow: 1;
     border-left: 5px solid black;
+    max-height: 100vh;
+}
+
+.achv1 {
+    padding: 0px;
 }

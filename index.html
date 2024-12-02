@@ -9,46 +9,54 @@
 
     <title>Clicker</title>
 </head>
-<section class="upgradeFlex">
-    <div>
-        <h2>Upgrades</h2>
-    </div>
-    <div class="iconFlex">
-        <div class="upgradeItem" id="upgrade1">
-            <h3>Upgrade 1</h3>
-            <p>Cost: </p>
-            <p id="cost1">50</p>
-        </div>
-        <div class="upgradeItem" id="upgrade2">
-            <h3>Upgrade 2</h3>
-            <p>Cost: 10</p>
-        </div>
-        <div class="upgradeItem" id="upgrade3">
-            <h3>Upgrade 3</h3>
-            <p>Cost: </p>
-            <p id="cost3">50</p>
-        </div>
-    </div>
-</section>
-<section class="clickFlex">
-    <div>
-        <h2 id="count">0</h2>
-    </div>
-    <div id="c" class="clicker">
-    </div>
-</section>
-<section class="achievmentFlex">
-    <div>
-        <h2>Achievments</h2>
-    </div>
-    <div class="iconFlex">
-    </div>
-</section>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="js/main.js"></script>
 
 <body>
+    <section class="upgradeFlex">
+        <div>
+            <h2>Upgrades</h2>
+        </div>
+        <div class="clickUpgradeFlex">
+            <div class="upgradeItem" id="upgrade1">
+                <h3>Upgrade 1</h3>
+                <p>Cost: </p>
+                <p id="cost1">50</p>
+            </div>
+            <div class="upgradeItem" id="upgrade2">
+                <h3>Upgrade 2</h3>
+                <p>Cost: 10</p>
+            </div>
+            <div class="upgradeItem" id="upgrade3">
+                <h3>Upgrade 3</h3>
+                <p>Cost: </p>
+                <p id="cost3">50</p>
+            </div>
+        </div>
+    </section>
+    <section class="clickFlex">
+        <div>
+            <h2 id="count">0</h2>
+            <p id="passive">Balls per second: </p>
+        </div>
+        <div id="c" class="clicker">
+            <img src="imgs/ball.svg" alt="ball">
+        </div>
+    </section>
+    <section class="achievmentFlex">
+        <div>
+            <h2>Achievments</h2>
+        </div>
+        <div class="iconFlex">
+            <div id="achv1">
+                <h3>Achievment 1</h3>
+                <p>Click 1000 balls</p>
+            </div>
+        </div>
+    </section>
+    <div style="display: none;"><img id="ballAnimate" src="imgs/ball.svg"></div>
+    <canvas id="canvas"></canvas>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
