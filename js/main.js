@@ -27,7 +27,7 @@ class ball {
             this.vx = 2,
             this.vy = 3,
             this.radius = 15;
-            this.firstBounce = false;
+        this.firstBounce = false;
     }
     draw() {
 
@@ -45,8 +45,8 @@ class ball {
 
         ) {
             if (this.firstBounce == false) {
-            this.vy = -(this.vy / Math.max(Math.random()*2, 0.9));
-            this.firstBounce = true;
+                this.vy = -(this.vy / Math.max(Math.random() * 2, 0.9));
+                this.firstBounce = true;
             }
             else {
                 this.vy = -(this.vy / 1.2);
@@ -134,51 +134,68 @@ function clickNumber() {
 let upgrades = [];
 
 class clickUpgrade {
-    constructor() {
-        this.id = "cUp";
-        this.cost = 50,
-            this.increase = 30,
-            this.canBuy = false;
-            this.name = "Upgrade 1";
-        this.background = "red";
+    constructor(id, cost, inc, clickPwr, name, background, max) {
+        this.id = id;
+        this.cost = cost,
+            this.costInc = inc,
+            this.clickPwr = clickPwr,
+            this.name = name;
+        this.background = background;
+        this.max = max;
     }
     createUpgrade() {
-        $("#clickUp").append("<div class='upgradeItem' id=" + this.id + "> <h3>" + this.name + "</h3> <p id='cost"+ this.id + "'>Cost: " + this.cost + "</p></div>");
+        $("#clickUp").append("<div class='upgradeItem' id=" + this.id + "> <h3>" + this.name + "</h3> <p id='cost" + this.id + "'>Cost: " + this.cost + "</p><p id='max" + this.id + "'>Left: " + this.max + "</p></div>");
         $("#" + this.id).css("background", this.background);
     }
     upgrade() {
         if (count >= this.cost) {
             count = count - this.cost;
-            clickPower = clickPower + 1;
-            this.cost = this.cost + 30;
+            clickPower = clickPower + this.clickPwr;
+            this.cost = this.cost + this.costInc;
+            $("#pwr").text("Balls per click: " + clickPower);
             $("#count").text(Math.trunc(count));
             $("#cost" + this.id).text("Cost: " + this.cost);
+            this.max--;
+            $("#max" + this.id).text("Left: " + this.max);
             checkUpgrade();
         }
     }
-    
+
     checkBuy() {
         if (count >= this.cost) {
-            $("#" + this.id).css("background", "green");
+            $("#" + this.id).css("filter", "none");;
         } else {
-            $("#" + this.id).css("background", "red");
+            $("#" + this.id).css("background", this.background);
+            $("#" + this.id).css("filter", "grayscale(70%)");
         }
     }
 };
 
 function checkUpgrade() {
     if (upgradeInc == 0 && count >= 1) {
-        upgrades.push(new clickUpgrade("cUp1", 50, 30, false, "The First One", "yellow"));
+        upgrades.push(new clickUpgrade("cUp1", 1, 1, 1, "The First One", "orange", 5));
         upgrades[0].createUpgrade();
         upgradeInc = 1;
+        $("#" + upgrades[0].id).on("click", function(){
+            upgrades[0].upgrade();
+        });
     } else if (upgradeInc == 1 && count >= 100) {
-        upgrades.push(new clickUpgrade("cUp2", 50, 30, false, "The Second One", "yellow"));
+        upgrades.push(new clickUpgrade("cUp2", 10, 10, 5, "The Second One", "blue", 6));
         upgrades[1].createUpgrade();
         upgradeInc = 2;
+        $("#" + upgrades[1].id).on("click", function(){
+            upgrades[1].upgrade();
+        });
     }
 
     for (let clickUpgrade of upgrades) {
         clickUpgrade.checkBuy();
+        if (clickUpgrade.max == 0) {
+            $("#" + clickUpgrade.id).hide();
+            $("#" + clickUpgrade.id).off("click");
+        }
+        else {
+        }
     }
 }
 
@@ -189,10 +206,21 @@ function checkUpgrade() {
 /*********** Main JQuery Procedure **********/
 
 $("#c").on("click", clicked);
-$("#clickUp").on("click", function() {
-    if (upgrades.length > 0) {
+/*$("#clickUp").on("click", function () {
+    if (upgradeInc == 1) {
+        
+    } else if (upgradeInc == 2) {
         $("#" + upgrades[0].id).on("click", upgrades[0].upgrade());
-    } else if (upgrades.length > 1) {
         $("#" + upgrades[1].id).on("click", upgrades[1].upgrade());
     }
-});
+    else if (upgradeInc == 3) {
+        $("#" + upgrades[0].id).on("click", upgrades[0].upgrade());
+        
+        $("#" + upgrades[2].id).on("click", upgrades[2].upgrade());
+    }
+    else if (upgradeInc == 4) {
+        $("#" + upgrades[0].id).on("click", upgrades[0].upgrade());
+        $("#" + upgrades[1].id).on("click", upgrades[1].upgrade());
+        $("#" + upgrades[2].id).on("click", upgrades[2].upgrade());
+    }
+});*/
