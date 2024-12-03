@@ -1,13 +1,19 @@
+
 body {
+    color: rgb(213, 213, 213);
     display: flex;
     height: 100vh;
     max-height: 100vh;
     margin: 0;
-    background-color: #0c0f9b;
+    background-color: rgb(1, 14, 3);
     background-image: url("../imgs/ball.svg");
-    background-repeat: round;
     background-size: 5%;
     background-blend-mode: darken;
+    background-size: 1.5%;
+
+    font-family: "Rubik Bubbles", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .background {
@@ -16,27 +22,24 @@ body {
 }
 
 h2 {
-    color: #ffffff;
     font-size: 3em;
     text-align: center;
 }
 
 p {
-    color: #ffffff;
     font-size: 1em;
     text-align: center;
 }
 
-canvas { 
+canvas {
     position: absolute;
-    pointer-events:none;
+    pointer-events: none;
     z-index: 100;
     width: 100%;
+    height: 100%;
     max-height: 100vh;
 }
 
-#ballAnimate {
-}
 .upgradeFlex {
     display: flex;
     flex-direction: column;
@@ -60,19 +63,27 @@ canvas {
     margin: 10px;
 }
 
+#upgrade1, 
+#upgrade2, 
+#upgrade3 {
+    background: "blue";
+}
+
 .clickFlex {
     display: flex;
     flex-direction: column;
-    justify-content: top;
+    justify-content: space-between;
     align-items: center;
     flex-grow: 2;
     padding: 2%;
+    padding-bottom: 10vh;
     max-height: 100vh;
 }
 
-.clicker img{
+.clicker img {
     width: 100%;
     height: auto;
+    min-width: 20vw;
     margin-top: 15px;
     padding: 0px;
     cursor: pointer;
