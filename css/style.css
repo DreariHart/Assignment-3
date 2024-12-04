@@ -1,17 +1,14 @@
-
 body {
-    color: rgb(213, 213, 213);
     display: flex;
     height: 100vh;
     max-height: 100vh;
     margin: 0;
-    background-color: rgb(1, 14, 3);
-    background-image: url("../imgs/ball.svg");
-    background-size: 5%;
+    background: rgba(0, 0, 0, 0.695);
+    background-image: url("../imgs/background.jpg");
     background-blend-mode: darken;
-    background-size: 1.5%;
+    user-select: none;
 
-    font-family: "Rubik Bubbles", system-ui;
+    font-family: "Cubano", system-ui;
     font-weight: 400;
     font-style: normal;
 }
@@ -22,8 +19,12 @@ body {
 }
 
 h2 {
+    color: rgb(213, 213, 213);
     font-size: 3em;
     text-align: center;
+    font-family: "Cubano", "Merienda";
+    font-optical-sizing: auto;
+    text-shadow: #000000 2px 2px 2px;
 }
 
 p {
@@ -43,48 +44,84 @@ canvas {
 .upgradeFlex {
     display: flex;
     flex-direction: column;
+    flex-basis: 25%;
     justify-content: top;
     align-items: center;
     flex-grow: 1;
+    flex-shrink: 1;
     border-right: 5px solid black;
     max-height: 100vh;
+    background: rgba(0, 0, 0, 0.755);
+    background-image: url("../imgs/background.jpg");
+    background-blend-mode: darken;
 }
 
 .clickUpgradeFlex {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
     align-items: center;
+    border-bottom: 5px solid white;
+    border-top: 5px solid white;
+    margin: 0px;
+    
 }
 
-.upgradeItem {
+.passiveUpgradeFlex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+}
+
+.passItem {
     padding: 20px;
     background-color: #ff0000;
     border: 1px solid #000000;
     border-radius: 5px;
     cursor: pointer;
     margin: 10px;
+    width: 100%;
 }
 
-#upgrade1, 
-#upgrade2, 
-#upgrade3 {
-    background: "blue";
+.upgradeItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-wrap: wrap;
+    background-color: #ff0000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    text-align: center;
+    font-size: xx-small;
+    cursor: pointer;
+    height: 10vh;
+    width: 8vw;
+    margin: 5px;
+}
+
+.upgradeItem h3 {
+    flex-basis: 100%;
 }
 
 .clickFlex {
     display: flex;
+    flex-basis: 50%;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    flex-grow: 2;
-    padding: 2%;
     padding-bottom: 10vh;
     max-height: 100vh;
+    background: rgba(0, 0, 0, 0.475);
+    background-image: url("../imgs/background.jpg");
+    background-blend-mode: darken;
 }
 
 .clicker img {
     width: 100%;
     height: auto;
-    min-width: 20vw;
     margin-top: 15px;
     padding: 0px;
     cursor: pointer;
@@ -97,14 +134,32 @@ canvas {
 
 .achievmentFlex {
     display: flex;
+    flex-basis: 25%;
     flex-direction: column;
     justify-content: top;
     align-items: center;
     flex-grow: 1;
     border-left: 5px solid black;
     max-height: 100vh;
+    background: rgba(19, 1, 67, 0.605);
+    background-image: url("../imgs/background.jpg");
+    background-blend-mode: darken;
 }
 
-.achv1 {
+.achievment {
+    display: flex;
+}
+
+.achvItem {
     padding: 0px;
 }
+
+/*
+1.
+The issue with solid state drives with respect to DBMS and assymetric read/write times and an erase before write cost.
+2.
+The property of tradional DBMS is the separation of the log from the data
+3. Instead of storing them separate, they are stored together on the same erase unit
+4.
+Updates to the data pages on flash memory using log records is only done on the data pages
+*/

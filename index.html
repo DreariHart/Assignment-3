@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 
     <title>Clicker</title>
 </head>
@@ -17,7 +17,9 @@
         <div>
             <h2>Upgrades</h2>
         </div>
-        <div id = "clickUp" class="clickUpgradeFlex">
+        <div id="clickUp" class="clickUpgradeFlex">
+        </div>
+        <div id="passiveUp" class="passiveUpgradeFlex">
         </div>
     </section>
     <section class="clickFlex">
@@ -34,14 +36,15 @@
         <div>
             <h2>Achievments</h2>
         </div>
-        <div class="iconFlex">
-            <div id="achv1">
-                <h3>Achievment 1</h3>
-                <p>Click 1000 balls</p>
-            </div>
+        <div class="achievment">
         </div>
     </section>
     <div style="display: none;"><img id="ballAnimate" src="imgs/ball.svg"></div>
+    <div style="display: none;"><img id="blueballAnimate" src="imgs/blueball.svg"></div>
+    <div style="display: none;"><img id="greenballAnimate" src="imgs/greenball.svg"></div>
+    <div style="display: none;"><img id="pinkballAnimate" src="imgs/pinkball.svg"></div>
+    <div style="display: none;"><img id="yellowballAnimate" src="imgs/yellowball.svg"></div>
+    <div style="display: none;"><img id="purpleballAnimate" src="imgs/purpleball.svg"></div>
     <canvas id="canvas"></canvas>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
