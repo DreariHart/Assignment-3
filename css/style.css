@@ -9,7 +9,7 @@ body {
     max-height: 100vh;
     margin: 0;
     background: rgba(2, 78, 40, 0.478);
-    background-image: url("../imgs/background.jpg");
+    background-image: url("../imgs/foamback.png");
     background-blend-mode: darken;
     user-select: none;
     font-family: "Helvetica, system-ui, sans-serif";
@@ -101,7 +101,8 @@ p {
 }
 
 .passItem {
-    background-size: 20px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -121,6 +122,9 @@ p {
 }
 
 .upgradeItem {
+    background-size: 75% 90%;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -135,7 +139,7 @@ p {
     font-size: 12px;
     width: 8vw;
     margin: 5px;
-    background-size: 10px;
+    background-color: rgb(46, 99, 25);
 }
 
 .upgradeItem h3 {
@@ -170,6 +174,7 @@ p {
 .clicker {
     height: 50vh;
 }
+
 .clicker img {
     width: 100%;
     height: auto;
@@ -179,7 +184,7 @@ p {
     transition: transform 0.2s;
 }
 
-.clicker img:hover{
+.clicker img:hover {
     transform: scale(1.2);
 }
 
