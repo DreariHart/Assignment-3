@@ -1,16 +1,21 @@
+/***************************************
+----------------------------------------
+************ HTML Tag Styles ***********
+----------------------------------------
+****************************************/
 body {
     display: flex;
     height: 100vh;
     max-height: 100vh;
     margin: 0;
-    background: rgba(0, 0, 0, 0.695);
+    background: rgba(2, 78, 40, 0.478);
     background-image: url("../imgs/background.jpg");
     background-blend-mode: darken;
     user-select: none;
-
-    font-family: "Cubano", system-ui;
-    font-weight: 400;
+    font-family: "Helvetica, system-ui, sans-serif";
+    font-weight: 800;
     font-style: normal;
+    font-variant: small-caps;
 }
 
 .background {
@@ -24,7 +29,9 @@ h2 {
     text-align: center;
     font-family: "Cubano", "Merienda";
     font-optical-sizing: auto;
-    text-shadow: #000000 2px 2px 2px;
+    text-shadow: #000000 5px 5px 3px;
+    font-variant: small-caps;
+    margin: 0px;
 }
 
 p {
@@ -32,7 +39,12 @@ p {
     text-align: center;
 }
 
-canvas {
+/***************************************
+----------------------------------------
+************ Canvas Styles *************
+----------------------------------------
+****************************************/
+#canvas {
     position: absolute;
     pointer-events: none;
     z-index: 100;
@@ -41,82 +53,119 @@ canvas {
     max-height: 100vh;
 }
 
+#canvasClick {
+    position: absolute;
+    pointer-events: none;
+    z-index: 101;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+}
+
+/***************************************
+----------------------------------------
+************ Upgrade Styles ************
+----------------------------------------
+****************************************/
 .upgradeFlex {
     display: flex;
     flex-direction: column;
     flex-basis: 25%;
     justify-content: top;
     align-items: center;
-    flex-grow: 1;
-    flex-shrink: 1;
-    border-right: 5px solid black;
     max-height: 100vh;
-    background: rgba(0, 0, 0, 0.755);
-    background-image: url("../imgs/background.jpg");
-    background-blend-mode: darken;
 }
 
 .clickUpgradeFlex {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     width: 100%;
     align-items: center;
-    border-bottom: 5px solid white;
-    border-top: 5px solid white;
+    border-top: 5px double black;
     margin: 0px;
-    
 }
 
 .passiveUpgradeFlex {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
     text-align: center;
 }
 
 .passItem {
+    background-size: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color: black;
+    text-shadow: 1px 0 rgb(213, 213, 213), 0 1px rgb(213, 213, 213),
+        -1px 0 rgb(213, 213, 213), 0 -1px rgb(213, 213, 213);
     padding: 20px;
-    background-color: #ff0000;
     border: 1px solid #000000;
     border-radius: 5px;
     cursor: pointer;
     margin: 10px;
     width: 100%;
+    height: 10vh;
+}
+
+.passItem h3 {
+    flex-basis: 100%;
+    font-size: 18px;
+    margin: 0px;
 }
 
 .upgradeItem {
+    color: black;
+    text-shadow: 1px 0 rgb(213, 213, 213), 0 1px rgb(213, 213, 213),
+        -1px 0 rgb(213, 213, 213), 0 -1px rgb(213, 213, 213);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-left: 10px;
     padding-right: 10px;
     flex-wrap: wrap;
-    background-color: #ff0000;
-    border: 1px solid #000000;
+    border: 2px outset #000000;
     border-radius: 5px;
     text-align: center;
-    font-size: xx-small;
     cursor: pointer;
     height: 10vh;
+    font-size: 12px;
     width: 8vw;
     margin: 5px;
+    background-size: 10px;
 }
 
 .upgradeItem h3 {
     flex-basis: 100%;
+    font-size: 14px;
+    margin: 0px;
 }
 
+/***************************************
+----------------------------------------
+************ Clicker Styles ************
+----------------------------------------
+****************************************/
 .clickFlex {
+    color: rgb(213, 213, 213);
+    text-shadow: 1px 0 black, 0 1px black,
+        -1px 0 black, 0 -1px black;
     display: flex;
     flex-basis: 50%;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    padding-bottom: 10vh;
+    padding-bottom: 5vh;
     max-height: 100vh;
-    background: rgba(0, 0, 0, 0.475);
-    background-image: url("../imgs/background.jpg");
-    background-blend-mode: darken;
+    border-left: 5px double black;
+    border-right: 5px double black;
+}
+
+.clickFlex p {
+    font-size: 1.5em;
 }
 
 .clicker img {
@@ -132,26 +181,49 @@ canvas {
     transform: scale(1.2);
 }
 
+/***************************************
+----------------------------------------
+********** Achievment Styles ***********
+----------------------------------------
+****************************************/
 .achievmentFlex {
     display: flex;
     flex-basis: 25%;
     flex-direction: column;
     justify-content: top;
     align-items: center;
-    flex-grow: 1;
-    border-left: 5px solid black;
     max-height: 100vh;
-    background: rgba(19, 1, 67, 0.605);
-    background-image: url("../imgs/background.jpg");
-    background-blend-mode: darken;
 }
 
 .achievment {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    border-top: 5px double black;
+    margin: 0px;
 }
 
 .achvItem {
+    color: rgb(189, 189, 189);
+    text-shadow: 1px 0 black, 0 1px black,
+        -1px 0 black, 0 -1px black;
     padding: 0px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: rgb(66, 21, 21);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    text-align: center;
+    height: 20vh;
+    font-size: 15px;
+    width: 10vw;
+    margin: 10px;
+    margin-top: 30px;
 }
 
 /*

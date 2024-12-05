@@ -25,18 +25,18 @@
     <section class="clickFlex">
         <div>
             <h2 id="count">0</h2>
-            <p id="passive">Balls per second: </p>
+            <p id="passive">Balls per second: 0.1 </p>
             <p id="pwr">Balls per click: 1 </p>
         </div>
         <div id="c" class="clicker">
-            <img src="imgs/ball.svg" alt="ball">
+            <img src="imgs/ball.svg" alt="ball" draggable = false>
         </div>
     </section>
     <section class="achievmentFlex">
         <div>
             <h2>Achievments</h2>
         </div>
-        <div class="achievment">
+        <div id="achvmnt" class="achievment">
         </div>
     </section>
     <div style="display: none;"><img id="ballAnimate" src="imgs/ball.svg"></div>
@@ -46,6 +46,7 @@
     <div style="display: none;"><img id="yellowballAnimate" src="imgs/yellowball.svg"></div>
     <div style="display: none;"><img id="purpleballAnimate" src="imgs/purpleball.svg"></div>
     <canvas id="canvas"></canvas>
+    <canvas id="canvasClick"></canvas>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
