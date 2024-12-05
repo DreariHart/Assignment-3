@@ -21,16 +21,18 @@ var plural = " balls";
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-const image = document.getElementById("ballAnimate");
-const blue = document.getElementById("blueballAnimate");
-const green = document.getElementById("greenballAnimate");
-const pink = document.getElementById("pinkballAnimate");
-const yellow = document.getElementById("yellowballAnimate");
-const purple = document.getElementById("purpleballAnimate");
+const image = document.getElementById("ball");
+const blue = document.getElementById("blueball");
+const green = document.getElementById("greenball");
+const pink = document.getElementById("pinkball");
+const yellow = document.getElementById("yellowball");
+const purple = document.getElementById("purpleball");
+const dblue = document.getElementById("dblueball");
+const orange = document.getElementById("orangeball");
 
 let raf;
 let balls = [];
-let images = [image, blue, green, pink, yellow, purple];
+let images = [image, blue, green, pink, yellow, purple, dblue, orange];
 class ball {
     constructor() {
         this.x = -10,
@@ -244,21 +246,21 @@ class clickUpgrade {
             $("#" + this.id).css("filter", "none");;
         } else {
             $("#" + this.id).css("background-image", this.background);
-            $("#" + this.id).css("filter", "grayscale(70%)");
+            $("#" + this.id).css("filter", "grayscale(90%)");
         }
     }
 };
 
 function checkUpgrade() {
     if (upgradeInc == 0 && count >= 1) {
-        upgrades.push(new clickUpgrade("cUp1", 50, 60, 1, "Click Power + 1", "url('../imgs/blueball.svg')", 5, false));
+        upgrades.push(new clickUpgrade("cUp1", 50, 60, 1, "Click Power + 1", "url('./imgs/blueball.svg')", 5, false));
         upgrades[0].createUpgrade();    
         upgradeInc = 1;
         $("#" + upgrades[0].id).on("click", function () {
             upgrades[0].upgrade();
         });
     } else if (upgradeInc == 1 && count >= 1) {
-        upgrades.push(new clickUpgrade("cUp2", 300, 200, 5, "Click Power + 5", "url('../imgs/purpleball.svg')", 6, false));
+        upgrades.push(new clickUpgrade("cUp2", 300, 200, 5, "Click Power + 5", "url('./imgs/purpleball.svg')", 6, false));
         upgrades[1].createUpgrade();
         upgradeInc = 2;
         $("#" + upgrades[1].id).on("click", function () {
@@ -266,14 +268,14 @@ function checkUpgrade() {
         });
     }
     else if (upgradeInc == 2 && count >= 1) {
-        upgrades.push(new clickUpgrade("cUp3", 1000, 1000, 2, "Click Power x2", "url('../imgs/pinkball.svg')", 2, false));
+        upgrades.push(new clickUpgrade("cUp3", 1000, 1000, 2, "Click Power x2", "url('./imgs/pinkball.svg')", 2, false));
         upgrades[2].createUpgrade();
         upgradeInc = 3;
         $("#" + upgrades[2].id).on("click", function () {
             upgrades[2].upgrade();
         });
     }    else if (upgradeInc == 3 && count >= 1) {
-        upgrades.push(new clickUpgrade("cUp4", 5000, 0, 5, "Click Power x5", "url('../imgs/greenball.svg')", 1, false));
+        upgrades.push(new clickUpgrade("cUp4", 5000, 0, 5, "Click Power x5", "url('./imgs/greenball.svg')", 1, false));
         upgrades[3].createUpgrade();
         upgradeInc = 4;
         $("#" + upgrades[3].id).on("click", function () {
@@ -282,21 +284,21 @@ function checkUpgrade() {
     }
 
     if (upgradePassInc == 0 && count >= 1) {
-        passUpgrades.push(new clickUpgrade("pUp1", 15, 20, 0.1, "Toy Store", "url(../imgs/greenball.svg)", 0, true));
+        passUpgrades.push(new clickUpgrade("pUp1", 15, 20, 0.1, "Toy Store", "url(./imgs/greenball.svg)", 0, true));
         passUpgrades[0].createUpgrade();
         upgradePassInc = 1;
         $("#" + passUpgrades[0].id).on("click", function () {
             passUpgrades[0].upgrade();
         });
     } else if (upgradePassInc == 1 && count >= 1) {
-        passUpgrades.push(new clickUpgrade("pUp2", 100, 125, 1, "Ball Pit", "url(../imgs/ball.svg)", 0, true));
+        passUpgrades.push(new clickUpgrade("pUp2", 100, 125, 1, "Ball Pit", "url(./imgs/ball.svg)", 0, true));
         passUpgrades[1].createUpgrade();
         upgradePassInc = 2;
         $("#" + passUpgrades[1].id).on("click", function () {
             passUpgrades[1].upgrade();
         });
     } else if (upgradePassInc == 2 && count >= 1) {
-        passUpgrades.push(new clickUpgrade("pUp3", 500, 250, 5, "Ball Factory", "url(../imgs/yellowball.svg)", 0, true));
+        passUpgrades.push(new clickUpgrade("pUp3", 500, 250, 5, "Ball Factory", "url(./imgs/yellowball.svg)", 0, true));
         passUpgrades[2].createUpgrade();
         upgradePassInc = 3;
         $("#" + passUpgrades[2].id).on("click", function () {
@@ -361,12 +363,12 @@ class Achievment {
 
 let achievments = [];
 
-achievments.push(new Achievment("achv1", "First Click", "Click your first ball", "url('../imgs/blueball.svg')"));
-achievments.push(new Achievment("achv2", "Ball Pit", "Have 500 balls", "url('../imgs/greenball.svg')"));
-achievments.push(new Achievment("achv3", "Crazy Clicker", "Click the ball 500 times", "url('../imgs/purpleball.svg')"));
-achievments.push(new Achievment("achv4", "Legendary Baller", "Have 50,000 balls", "url('../imgs/pinkball.svg')"));
-achievments.push(new Achievment("achv5", "Corporation", "Own 10 Toy Stores", "url('../imgs/yellowball.svg')"));
-achievments.push(new Achievment("achv6", "Idle Bouncing", "Generate 10 balls per second", "url('../imgs/ball.svg')"));
+achievments.push(new Achievment("achv1", "First Click", "Click your first ball", "url('./imgs/blueball.svg')"));
+achievments.push(new Achievment("achv2", "Ball Pit", "Have 500 balls", "url('./imgs/greenball.svg')"));
+achievments.push(new Achievment("achv3", "Crazy Clicker", "Click the ball 500 times", "url('./imgs/purpleball.svg')"));
+achievments.push(new Achievment("achv4", "Legendary Baller", "Have 50,000 balls", "url('./imgs/pinkball.svg')"));
+achievments.push(new Achievment("achv5", "Corporation", "Own 10 Toy Stores", "url('./imgs/yellowball.svg')"));
+achievments.push(new Achievment("achv6", "Idle Bouncing", "Generate 10 balls per second", "url('./imgs/ball.svg')"));
 
 for (let achievment of achievments) {
     achievment.createAchievment();
@@ -384,8 +386,12 @@ $(document).on("mousemove", function( event ) {
   });
 $("#c").on("click", clicked);
 $("#c").on("mousedown", function(){
-    $(".clicker img:hover").css("transform", "scale(1.0)");
+    $("#mainball").animate({
+        width: "-=2%",
+    }, 10);
 });
 $("#c").on("mouseup", function(){
-    $(".clicker img:hover").css("transform", "scale(1.2)");
+    $("#mainball").animate({
+        width: "+=2%"
+    }, 10);
 });
